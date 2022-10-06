@@ -1,0 +1,9 @@
+.form-change{
+    flex-direction: column;
+}
+.input-block {
+    flex-direction: row;
+}
+.flex {
+    display: flex;
+}

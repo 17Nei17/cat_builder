@@ -1,0 +1,187 @@
+body {
+	font-size: .9em;
+	font-family: Verdana;
+	margin: 0;
+	padding: 0;
+	background-attachment: fixed;
+	background-color: #D5DEEF;
+}
+
+a {
+	outline: none;
+}
+
+a:link, a:visited {
+	text-decoration: underline;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+input, select, textarea {
+	background-color: #333;
+	color: #FFF;
+	border: 1px solid #000;
+	font-family: Verdana;
+	font-size: .9em;
+}
+
+textarea {
+	background-color: #000;
+}
+
+textarea:focus {
+	background-color: #333;
+}
+
+input:hover, select:hover, textarea:hover {
+	border: 1px solid #FF0;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+#site_table, #footer {
+	width: 97%;
+}
+
+#logo {
+	width: 100%;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+#newls, #newchat {
+	background-color: white;
+	font-weight: bold;
+	color: black;
+}
+
+#menu_div {
+	margin: 5px 0;
+	padding: 0;
+	text-align: center;
+}
+
+#footer {
+	margin: 12px auto 8px;
+	text-align: center;
+}
+
+#site_table {
+	margin: auto;
+}
+
+#emblem, [class^=kn] {
+	display: inline-block;
+}
+
+#report_warning, #report_warning a {
+	background: #FC9;
+	color: #006;
+	font-size: 18px;
+}
+
+#leftBranch, #rightBranch {
+	padding: 0;
+	margin: 0;
+}
+
+table {
+	border-color: #333;
+}
+
+body {
+	background-image: url('background.png?107017945');
+	color: #1B1314;
+}
+
+a:link, a:visited {
+	color: #320D04;
+}
+
+a:hover {
+	color: #CEDEFD;
+}
+
+#site_table, #footer {
+	background-color: RGBA(125, 148, 187, 0.85);
+	border-radius: 15px;
+}
+
+#logo {
+	height: 334px;
+	background-image: url('header.png?107017945');
+}
+
+#branch {
+	background: url('side.png?107017945') repeat-y left top,
+				url('side.png?107017945') repeat-y right top;
+	padding: 1px 100px;
+}
+
+#menu_div {
+	margin-top: -82px;
+}
+
+#emblem {
+	background: url('./emblem.png');
+    width: 91px;
+    height: 50px;
+}
+
+#emblem:hover {
+	background: url('./emblem_hover.png');
+}
+
+[class^=kn] {
+	background: url('./menu\ .png') no-repeat top left;
+    height: 50px;
+}
+
+[class^=kn]:hover {
+	background-image: url('./menu_hover.png');
+}
+
+.page_scroll {
+	width: 50px !important;
+	height: 50px !important;
+}
+
+#page_down {
+	background: url('./page_down.png') !important;
+}
+
+#page_up {
+	background: url('./page_up.png') !important;
+}
+
+/* buttons */
+.kn1 {background-position: 0px 0; width: 99px}
+.kn2 {background-position: -99px 0; width: 132px}
+.kn3 {background-position: -231px 0; width: 74px}
+.kn4 {background-position: -305px 0; width: 88px}
+.kn5 {background-position: -393px 0; width: 71px}
+.kn6 {background-position: -464px 0; width: 135px}
+.kn7 {background-position: -599px 0; width: 91px}
+.kn8 {background-position: -690px 0; width: 76px}
+.kn9 {background-position: -766px 0; width: 91px}
+.kn10 {background-position: -857px 0; width: 52px}
+.kn11 {background-position: -909px 0; width: 138px}
+.kn12 {background-position: -1047px 0; width: 160px}
+.kn13 {background-position: -1207px 0; width: 149px}
+.kn1:hover {background-position: 0px 0; width: 99px}
+.kn2:hover {background-position: -99px 0; width: 132px}
+.kn3:hover {background-position: -231px 0; width: 74px}
+.kn4:hover {background-position: -305px 0; width: 88px}
+.kn5:hover {background-position: -393px 0; width: 71px}
+.kn6:hover {background-position: -464px 0; width: 135px}
+.kn7:hover {background-position: -599px 0; width: 91px}
+.kn8:hover {background-position: -690px 0; width: 76px}
+.kn9:hover {background-position: -766px 0; width: 91px}
+.kn10:hover {background-position: -857px 0; width: 52px}
+.kn11:hover {background-position: -909px 0; width: 138px}
+.kn12:hover {background-position: -1047px 0; width: 160px}
+.kn13:hover {background-position: -1207px 0; width: 149px}
