@@ -1,9 +1,36 @@
-.form-change{
+.form-change {
     flex-direction: column;
+    background-color: wheat;
+    margin-left: 80px;
+    margin-right: 80px;
 }
 .input-block {
     flex-direction: row;
 }
 .flex {
     display: flex;
+    border: 1px solid cornsilk;
+}
+
+input[type="text"] {
+    font-family: inherit; /* 1 */
+    font-size: inherit; /* 1 */
+    line-height: inherit; /* 1 */
+    margin: 4px 54px; /* 2 */
+    height: 30px;
+    width: 400px;
+    color: #212529;
+    background-color: gray;
+    background-clip: padding-box;
+}
+input:disabled {
+    background-color: rgb(177, 37, 37);
+}
+
+.colorPicker, .cleanButton {
+    margin: 4px 54px; /* 2 */ 
+}
+
+input::placeholder {
+    color: black;
 }
