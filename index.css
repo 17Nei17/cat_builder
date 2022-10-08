@@ -6,6 +6,8 @@
 }
 .input-block {
     flex-direction: row;
+    font-size: 16px;
+    font-family: sans-serif;
 }
 .flex {
     display: flex;
@@ -22,15 +24,45 @@ input[type="text"] {
     color: #212529;
     background-color: gray;
     background-clip: padding-box;
+    transition: 0.2s linear;
 }
 input:disabled {
-    background-color: rgb(177, 37, 37);
+    background-color: rgb(177, 37, 37) !important;
 }
 
-.colorPicker, .cleanButton {
-    margin: 4px 54px; /* 2 */ 
+input:hover {
+    background-color: white;
+}
+
+.colorPicker,
+.cleanButton {
+    margin: 4px 54px; /* 2 */
 }
 
 input::placeholder {
     color: black;
+}
+
+
+button {
+    box-sizing: border-box;
+    position: relative;
+    display: inline-block;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+    color: white;
+    background: #ff5438;
+    border: 1px solid #112d52;
+    transition: 0.2s linear;
+    z-index: 2;
+}
+button:hover {
+    background: #112d52;
+    color: #ff5438;
+}
+
+.export {
+    color:red;
+    margin-left: 14px;
 }

@@ -22,6 +22,9 @@ class pageControl {
         this.rangeInput.forEach(button => {
             button.addEventListener("change", this.setOpacity, false);
         });
+        this.rangeInput.forEach(button => {
+            button.addEventListener("input", this.setOpacity, false);
+        });
     }
 
     setOpacity(event) {
@@ -35,17 +38,31 @@ class pageControl {
             }
 
         });
+        if(event.target.dataset.exportValue){
+            document.querySelector('#'+event.target.dataset.exportValue+'').textContent = event.target.value;
+        }
     }
 
     changeColor(event) {
-        if(event.target.dataset.cssAttr === 'hover'){
+        if (event.target.dataset.cssAttr === 'hover') {
             document.querySelectorAll('#' + event.target.dataset.targetItem + '').forEach(targetItem => {
-                let x = 'h1:hover{color:'+event.target.value+'}';
-                document.styleSheets[0].deleteRule(3);
-                document.styleSheets[0].insertRule('a:hover{color:red !important}', 3); 
-                
+                if(document.querySelector('#hoverStyle')){
+                    document.querySelector('#hoverStyle').remove();
+                }
+                var css = 'a:hover{color:'+event.target.value+' !important}';
+                var style = document.createElement('style');
+                style.id = "hoverStyle";
+                if (style.styleSheet) {
+                    style.styleSheet.cssText = css;
+                } else {
+                    style.appendChild(document.createTextNode(css));
+                }
+                document.getElementsByTagName('head')[0].appendChild(style);
+
             });
-            
+        }
+        if(event.target.dataset.exportValue){
+            document.querySelector('#'+event.target.dataset.exportValue+'').textContent = event.target.value;
         }
         event.target.dataset.targetItem.split(',').forEach(dataItem => {
             document.querySelectorAll('#' + dataItem + '').forEach(targetItem => {
@@ -53,6 +70,7 @@ class pageControl {
             });
         });
     }
+
     cleanImage(event) {
         event.target.dataset.targetInputs.split(',').forEach(input => {
             document.querySelector('#' + input + '').value = '';

@@ -13,23 +13,23 @@
     <div id="page_up" class="page_scroll"
         style="position: fixed; right: 5px; bottom: 5px; display: none; cursor: pointer"></div>
     <div id="logo"></div>
-    <div id="menu_div"> <a >
+    <div id="menu_div"> <a>
             <div class="kn7 " id="kn" title="Об игре"> </div>
         </a> <a>
             <div class="kn1 " id="kn" title="Мой кот"> </div>
-        </a> <a >
+        </a> <a>
             <div class="kn4 " id="kn" title="Список игроков"> </div>
-        </a> <a >
+        </a> <a>
             <div class="kn10 " id="kn" title="Чат"> </div>
-        </a> <a >
+        </a> <a>
             <div id="emblem" id="kn" title="Игровая"></div>
-        </a> <a >
+        </a> <a>
             <div class="kn6 " id="kn" title="Личные сообщения"> </div>
-        </a> <a >
+        </a> <a>
             <div class="kn8 " id="kn" title="Блоги"> </div>
-        </a> <a >
+        </a> <a>
             <div class="kn3 " id="kn" title="Лента"> </div>
-        </a> <a >
+        </a> <a>
             <div class="kn9 " id="kn" title="Выход"> </div>
         </a> </div>
     <div id="site_table" style="padding: 1px 1px">
@@ -70,55 +70,69 @@
                 так есть игры!</p>
         </div>
     </div>
-    <div id="footer"><a id="a" >Техническая поддержка</a> | <a id="a" >Важные посты</a> | <a id="a"
-            >ЧаВо</a><br><a id="a" >Поставить мобильную версию</a><br>© 2010—2022 <a id="a"
-            >Мурр</a>. Дизайн © <a id="a">Тестовый дизайн</a>.</div>
+    <div id="footer"><a id="a">Техническая поддержка</a> | <a id="a">Важные посты</a> | <a id="a">ЧаВо</a><br><a
+            id="a">Поставить мобильную версию</a><br>© 2010—2022 <a id="a">Мурр</a>. Дизайн © <a id="a">Тестовый
+            дизайн</a>.</div>
     <div id="scroll_bottom"></div>
     <div class="form-change flex">
         <div class="input-block flex">
-            <input type="text" id="logoInput" data-target-item="logo" class="imageInput" placeholder ="Вставьте ссылку на картинку">
+            <input type="text" id="logoInput" data-target-item="logo" class="imageInput"
+                placeholder="Вставьте ссылку на картинку">
             <p>Шапка</p>
             <button class="cleanButton" data-target-inputs="logoInput" data-target-item="logo">Очистить шапку</button>
         </div>
         <div class="input-block flex">
-            <input type="text" data-target-item="kn" class="imageInput" disabled placeholder ="Пока не работает">
+            <input type="text" data-target-item="kn" class="imageInput" disabled placeholder="Пока не работает">
             <p>Кнопки</p>
         </div>
         <div class="input-block flex">
-            <input type="text" data-target-item="body" id="backgroundInput" class="imageInput" placeholder ="Вставьте ссылку на картинку">
+            <input type="text" data-target-item="body" id="backgroundInput" class="imageInput"
+                placeholder="Вставьте ссылку на картинку">
             <p>Фон (Всего сайта)</p>
-            <button class="cleanButton" data-target-inputs="backgroundInput" data-target-item="body">Очистить весь фон</button>
+            <button class="cleanButton" data-target-inputs="backgroundInput" data-target-item="body">Очистить весь
+                фон</button>
         </div>
         <div class="input-block flex">
-            <input id="leftSide" type="text" data-target-item="branch" class="imageInput" data-branch="left" placeholder ="Вставьте ссылку на картинку">
+            <input id="leftSide" type="text" data-target-item="branch" class="imageInput" data-branch="left"
+                placeholder="Вставьте ссылку на картинку">
             <p>Рисунок слева</p>
         </div>
         <div class="input-block flex">
-            <input id="rightSide" type="text" data-target-item="branch" class="imageInput" data-branch="right" placeholder ="Вставьте ссылку на картинку">
+            <input id="rightSide" type="text" data-target-item="branch" class="imageInput" data-branch="right"
+                placeholder="Вставьте ссылку на картинку">
             <p>Рисунок справа</p>
             <button class="cleanButton" data-target-inputs="leftSide,rightSide" data-target-item="branch">Очистить
                 боковые панели</button>
         </div>
         <div class="input-block flex">
             <input data-target-item="site_table,footer" type="color" class="colorPicker"
-                data-css-attr="background-color">
+                data-css-attr="background-color" data-export-value="bodyColor">
             <p>Цвет фона (блока)</p>
+            <p class="export" id="bodyColor"></p>
             <input type="range" id="volume" name="volume" step="0.01" min="0" max="1" class="rangeInput"
-                data-target-item="site_table,footer">
+                data-target-item="site_table,footer" data-export-value="bodyOpacity">
             <p>Прозрачность фона</p>
+            <p class="export" id="bodyOpacity"></p>
         </div>
         <div class="input-block flex">
-            <input data-target-item="branch" type="color" class="colorPicker" data-css-attr="color">
+            <input data-target-item="branch" type="color" class="colorPicker" data-css-attr="color"
+                data-export-value="textColor">
             <p>Цвет шрифта</p>
+            <p class="export" id="textColor"></p>
         </div>
         <div class="input-block flex">
-            <input data-target-item="a" type="color" class="colorPicker" data-css-attr="color">
+            <input data-target-item="a" type="color" class="colorPicker" data-css-attr="color"
+                data-export-value="linkColor">
             <p>Цвет ссылок</p>
+            <p class="export" id="linkColor"></p>
         </div>
         <div class="input-block flex">
-            <input data-target-item="a" type="color" class="colorPicker" data-css-attr="hover">
+            <input data-target-item="a" type="color" class="colorPicker" data-css-attr="hover"
+                data-export-value="linkHoverColor">
             <p>Цвет ссылок при наведении</p>
+            <p class="export" id="linkHoverColor"></p>
         </div>
     </div>
 </body>
+
 </html>
