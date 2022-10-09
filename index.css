@@ -3,6 +3,8 @@
     background-color: wheat;
     margin-left: 80px;
     margin-right: 80px;
+    flex-direction: column;
+    align-items: baseline !important;
 }
 .input-block {
     flex-direction: row;
@@ -12,6 +14,8 @@
 .flex {
     display: flex;
     border: 1px solid cornsilk;
+    align-items: center;
+    flex-wrap: wrap;
 }
 
 input[type="text"] {
@@ -26,11 +30,11 @@ input[type="text"] {
     background-clip: padding-box;
     transition: 0.2s linear;
 }
-input:disabled {
+.imageInput:disabled {
     background-color: rgb(177, 37, 37) !important;
 }
 
-input:hover {
+.imageInput:hover {
     background-color: white;
 }
 
@@ -39,10 +43,9 @@ input:hover {
     margin: 4px 54px; /* 2 */
 }
 
-input::placeholder {
+.imageInput::placeholder {
     color: black;
 }
-
 
 button {
     box-sizing: border-box;
@@ -63,6 +66,37 @@ button:hover {
 }
 
 .export {
-    color:red;
+    color: red;
     margin-left: 14px;
+}
+.fileInput {
+    height: 25px;
+}
+#menu_div {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    align-items: baseline;
+}
+
+.buttons-block {
+    flex-wrap: wrap;
+}
+.buttons-block > div {
+    flex-direction: column;
+    display: flex;
+    align-items: flex-start;
+    border: 1px solid cornsilk;
+    flex: 1;
+}
+.header-form {
+    font-size: 18px;
+    font-weight: bold;
+    background-color: white;
+    width: 100%;
+    text-align: center;
+    
+}
+.flex>p{
+    padding: 0px 10px;
 }

@@ -1,30 +1,82 @@
 class pageControl {
     constructor(element) {
         this.element = element;
+        this.fileInput = element.querySelectorAll(".fileInput");
         this.colorPickers = element.querySelectorAll(".colorPicker");
         this.inputsImage = element.querySelectorAll(".imageInput");
         this.cleanButton = element.querySelectorAll(".cleanButton");
         this.rangeInput = element.querySelectorAll(".rangeInput");
+        this.buttonInput = element.querySelectorAll(".buttonInput");
         this.init();
 
     }
 
+
     init() {
+        this.buttonInput.forEach(input => {
+            input.addEventListener("change", (event) => this.addButtonImage(event, this), false);
+        });
+        this.fileInput.forEach(input => {
+            input.addEventListener("change", (event) => this.changeFile(event, this), false);
+        });
         this.colorPickers.forEach(picker => {
-            picker.addEventListener("input", this.changeColor, false);
+            picker.addEventListener("input", (event) => this.changeColor(event, this), false);
         });
         this.inputsImage.forEach(input => {
-            input.addEventListener("change", this.setImage, false);
+            input.addEventListener("change", (event) => this.setImage(event, this), false);
         });
         this.cleanButton.forEach(button => {
-            button.addEventListener("click", this.cleanImage, false);
+            button.addEventListener("click", (event) => this.cleanImage(event, this), false);
         });
         this.rangeInput.forEach(button => {
-            button.addEventListener("change", this.setOpacity, false);
+            button.addEventListener("change", (event) => this.setOpacity(event, this), false);
         });
         this.rangeInput.forEach(button => {
-            button.addEventListener("input", this.setOpacity, false);
+            button.addEventListener("input", (event) => this.setOpacity(event, this), false);
         });
+    }
+
+    addButtonImage(event) {
+        let f = event.target.files[0];
+        if (f) {
+            let src = URL.createObjectURL(f);
+            let targetItem = event.target.dataset.targetItem;
+            document.querySelector('#' + targetItem + '').src = src;
+        }
+    }
+
+    changeFile(event) {
+        let f = event.target.files[0];
+        if (f) {
+            let src = URL.createObjectURL(f);
+            let targetItem = event.target.dataset.targetItem;
+            if (event.target.dataset.branch) {
+                if (event.target.dataset.branch === "left") {
+                    if (document.querySelector('#' + targetItem + '').style.background.length > 0) {
+                        document.querySelector('#' + targetItem + '').style.background += ",url(" + src + ") repeat-y left top";
+                        return;
+                    } else {
+                        document.querySelector('#' + targetItem + '').style.background = "url(" + src + ") repeat-y left top";
+                        return;
+                    }
+
+                }
+                if (event.target.dataset.branch === "right") {
+                    if (document.querySelector('#' + targetItem + '').style.background.length > 0) {
+                        document.querySelector('#' + targetItem + '').style.background += ",url(" + src + ") repeat-y right top";
+                        return;
+                    } else {
+                        document.querySelector('#' + targetItem + '').style.background = "url(" + src + ") repeat-y right top";
+                        return;
+                    }
+
+                }
+            }
+            document.querySelectorAll('#' + event.target.dataset.targetItem + '').forEach(targetItem => {
+                targetItem.style.backgroundImage = "url(" + src + ")";
+            });
+        }
+
     }
 
     setOpacity(event) {
@@ -38,18 +90,17 @@ class pageControl {
             }
 
         });
-        if(event.target.dataset.exportValue){
-            document.querySelector('#'+event.target.dataset.exportValue+'').textContent = event.target.value;
+        if (event.target.dataset.exportValue) {
+            document.querySelector('#' + event.target.dataset.exportValue + '').textContent = event.target.value;
         }
     }
-
     changeColor(event) {
         if (event.target.dataset.cssAttr === 'hover') {
             document.querySelectorAll('#' + event.target.dataset.targetItem + '').forEach(targetItem => {
-                if(document.querySelector('#hoverStyle')){
+                if (document.querySelector('#hoverStyle')) {
                     document.querySelector('#hoverStyle').remove();
                 }
-                var css = 'a:hover{color:'+event.target.value+' !important}';
+                var css = 'a:hover{color:' + event.target.value + ' !important}';
                 var style = document.createElement('style');
                 style.id = "hoverStyle";
                 if (style.styleSheet) {
@@ -61,8 +112,8 @@ class pageControl {
 
             });
         }
-        if(event.target.dataset.exportValue){
-            document.querySelector('#'+event.target.dataset.exportValue+'').textContent = event.target.value;
+        if (event.target.dataset.exportValue) {
+            document.querySelector('#' + event.target.dataset.exportValue + '').textContent = event.target.value;
         }
         event.target.dataset.targetItem.split(',').forEach(dataItem => {
             document.querySelectorAll('#' + dataItem + '').forEach(targetItem => {
@@ -74,8 +125,11 @@ class pageControl {
     cleanImage(event) {
         event.target.dataset.targetInputs.split(',').forEach(input => {
             document.querySelector('#' + input + '').value = '';
+           
         });
         document.querySelector('#' + event.target.dataset.targetItem + '').style = "";
+        document.querySelector('#' + event.target.dataset.targetItem + '').src = "";
+        document.querySelector('input[type=file]').value = ''
     }
 
     setImage(event) {

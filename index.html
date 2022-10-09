@@ -14,23 +14,31 @@
         style="position: fixed; right: 5px; bottom: 5px; display: none; cursor: pointer"></div>
     <div id="logo"></div>
     <div id="menu_div"> <a>
-            <div class="kn7 " id="kn" title="Об игре"> </div>
+            <!-- <div class="kn7 " id="kn" title="Об игре"> </div> -->
+            <img src id="kn7" id="kn" title="Об игре">
         </a> <a>
-            <div class="kn1 " id="kn" title="Мой кот"> </div>
+            <img src id="kn1" id="kn" title="Мой кот">
+            <!-- <div class="kn1 " id="kn" title="Мой кот"> </div> -->
         </a> <a>
-            <div class="kn4 " id="kn" title="Список игроков"> </div>
+            <img src id="kn4" id="kn" title="Список игроков">
+            <!-- <div class="kn4 " id="kn" title="Список игроков"> </div> -->
         </a> <a>
-            <div class="kn10 " id="kn" title="Чат"> </div>
+            <img src id="kn10" id="kn" title="Чат">
+            <!-- <div class="kn10 " id="kn" title="Чат"> </div> -->
         </a> <a>
-            <div id="emblem" id="kn" title="Игровая"></div>
+            <img src id="emblem" id="kn" title="Игровая">
         </a> <a>
-            <div class="kn6 " id="kn" title="Личные сообщения"> </div>
+            <!-- <div class="kn6 " id="kn" title="Личные сообщения"> </div> -->
+            <img src id="kn6" id="kn" title="Личные сообщения">
         </a> <a>
-            <div class="kn8 " id="kn" title="Блоги"> </div>
+            <!-- <div class="kn8 " id="kn" title="Блоги"> </div> -->
+            <img src id="kn8" id="kn" title="Блоги">
         </a> <a>
-            <div class="kn3 " id="kn" title="Лента"> </div>
+            <!-- <div class="kn3 " id="kn" title="Лента"> </div> -->
+            <img src id="kn3" id="kn" title="Лента">
         </a> <a>
-            <div class="kn9 " id="kn" title="Выход"> </div>
+            <!-- <div class="kn9 " id="kn" title="Выход"> </div> -->
+            <img src id="kn9" id="kn" title="Выход">
         </a> </div>
     <div id="site_table" style="padding: 1px 1px">
         <div id="branch">
@@ -76,32 +84,41 @@
     <div id="scroll_bottom"></div>
     <div class="form-change flex">
         <div class="input-block flex">
-            <input type="text" id="logoInput" data-target-item="logo" class="imageInput"
-                placeholder="Вставьте ссылку на картинку">
+            <!-- <input type="text" id="logoInput" data-target-item="logo" class="imageInput"
+                placeholder="Вставьте ссылку на картинку"> -->
             <p>Шапка</p>
-            <button class="cleanButton" data-target-inputs="logoInput" data-target-item="logo">Очистить шапку</button>
+            <input type="file" id="logoFile" data-target-item="logo" class="fileInput" />
+            <button class="cleanButton" data-target-inputs="logoInput,logoFile" data-target-item="logo">Очистить
+                шапку</button>
         </div>
-        <div class="input-block flex">
+        <!-- <div class="input-block flex">
             <input type="text" data-target-item="kn" class="imageInput" disabled placeholder="Пока не работает">
             <p>Кнопки</p>
-        </div>
+        </div> -->
         <div class="input-block flex">
-            <input type="text" data-target-item="body" id="backgroundInput" class="imageInput"
-                placeholder="Вставьте ссылку на картинку">
+            <!-- <input type="text" data-target-item="body" id="backgroundInput" class="imageInput"
+                placeholder="Вставьте ссылку на картинку"> -->
             <p>Фон (Всего сайта)</p>
-            <button class="cleanButton" data-target-inputs="backgroundInput" data-target-item="body">Очистить весь
+            <input type="file" id="bodyFile" data-target-item="body" class="fileInput" />
+            <button class="cleanButton" data-target-inputs="backgroundInput,bodyFile" data-target-item="body">Очистить
+                весь
                 фон</button>
         </div>
         <div class="input-block flex">
-            <input id="leftSide" type="text" data-target-item="branch" class="imageInput" data-branch="left"
-                placeholder="Вставьте ссылку на картинку">
+            <!-- <input id="leftSide" type="text" data-target-item="branch" class="imageInput" data-branch="left"
+                placeholder="Вставьте ссылку на картинку"> -->
             <p>Рисунок слева</p>
+            <input type="file" id="leftSideFile" data-target-item="branch" class="fileInput" data-branch="left" />
+
         </div>
         <div class="input-block flex">
-            <input id="rightSide" type="text" data-target-item="branch" class="imageInput" data-branch="right"
-                placeholder="Вставьте ссылку на картинку">
+            <!-- <input id="rightSide" type="text" data-target-item="branch" class="imageInput" data-branch="right"
+                placeholder="Вставьте ссылку на картинку"> -->
             <p>Рисунок справа</p>
-            <button class="cleanButton" data-target-inputs="leftSide,rightSide" data-target-item="branch">Очистить
+            <input type="file" id="rightSideFile" data-target-item="branch" class="fileInput" data-branch="right" />
+
+            <button class="cleanButton" data-target-inputs="leftSide,rightSide,leftSideFile,rightSideFile"
+                data-target-item="branch">Очистить
                 боковые панели</button>
         </div>
         <div class="input-block flex">
@@ -131,6 +148,54 @@
                 data-export-value="linkHoverColor">
             <p>Цвет ссылок при наведении</p>
             <p class="export" id="linkHoverColor"></p>
+        </div>
+        <div class="header-form">КНОПКИ</div>
+        <div class="buttons-block flex">
+            <div>
+                <p>Кнопка "Об игре"</p>
+                <input type="file" id="aboutGame" data-target-item="kn7" class="buttonInput" />
+                <button class="cleanButton" data-target-inputs="aboutGame" data-target-item="kn7">Удалить</button>
+            </div>
+            <div>
+                <p>Кнопка "Мой кот"</p>
+                <input type="file" id="myCat" data-target-item="kn1" class="buttonInput" />
+                <button class="cleanButton" data-target-inputs="myCat" data-target-item="kn1">Удалить</button>
+            </div>
+            <div>
+                <p>Кнопка "Игроки"</p>
+                <input type="file" id="players" data-target-item="kn4" class="buttonInput" />
+                <button class="cleanButton" data-target-inputs="players" data-target-item="kn4">Удалить</button>
+            </div>
+            <div>
+                <p>Кнопка "Чат"</p>
+                <input type="file" id="chat" data-target-item="kn10" class="buttonInput" />
+                <button class="cleanButton" data-target-inputs="chat" data-target-item="kn10">Удалить</button>
+            </div>
+            <div>
+                <p>Кнопка "Игровой"</p>
+                <input type="file" id="gameButton" data-target-item="emblem" class="buttonInput" />
+                <button class="cleanButton" data-target-inputs="gameButton" data-target-item="emblem">Удалить</button>
+            </div>
+            <div>
+                <p>Кнопка "Сообщения"</p>
+                <input type="file" id="messages" data-target-item="kn6" class="buttonInput" />
+                <button class="cleanButton" data-target-inputs="messages" data-target-item="kn6">Удалить</button>
+            </div>
+            <div>
+                <p>Кнопка "Блоги"</p>
+                <input type="file" id="blogs" data-target-item="kn8" class="buttonInput" />
+                <button class="cleanButton" data-target-inputs="blogs" data-target-item="kn8">Удалить</button>
+            </div>
+            <div>
+                <p>Кнопка "Лента"</p>
+                <input type="file" id="feed" data-target-item="kn3" class="buttonInput" />
+                <button class="cleanButton" data-target-inputs="feed" data-target-item="kn3">Удалить</button>
+            </div>
+            <div>
+                <p>Кнопка "Выход"</p>
+                <input type="file" id="exit" data-target-item="kn9" class="buttonInput" />
+                <button class="cleanButton" data-target-inputs="exit" data-target-item="kn9">Удалить</button>
+            </div>
         </div>
     </div>
 </body>

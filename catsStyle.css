@@ -123,17 +123,17 @@ a:hover {
 }
 
 #menu_div {
-	margin-top: -82px;
+	/* margin-top: -82px; */
 }
 
 #emblem {
-	background: url('./emblem.png');
+	/* background: url('./emblem.png'); */
     width: 91px;
     height: 50px;
 }
 
 #emblem:hover {
-	background: url('./emblem_hover.png');
+	/* background: url('./emblem_hover.png'); */
 }
 
 [class^=kn] {
@@ -159,7 +159,7 @@ a:hover {
 }
 
 /* buttons */
-.kn1 {background-position: 0px 0; width: 99px}
+/* .kn1 {background-position: 0px 0; width: 99px}
 .kn2 {background-position: -99px 0; width: 132px}
 .kn3 {background-position: -231px 0; width: 74px}
 .kn4 {background-position: -305px 0; width: 88px}
@@ -184,4 +184,4 @@ a:hover {
 .kn10:hover {background-position: -857px 0; width: 52px}
 .kn11:hover {background-position: -909px 0; width: 138px}
 .kn12:hover {background-position: -1047px 0; width: 160px}
-.kn13:hover {background-position: -1207px 0; width: 149px}
+.kn13:hover {background-position: -1207px 0; width: 149px} */
